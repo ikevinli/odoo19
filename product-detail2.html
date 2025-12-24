@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Selection Button Preview</title>
+
+  <style>
+    :root {
+      --border: #e5e5e5;
+      --text: #1c1c1c;
+      --bg: #faf9f7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 40px 24px;
+      font-family: Inter, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    h2 {
+      margin: 48px 0 16px;
+      font-size: 18px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    /* ===== Option Group ===== */
+    .option-group {
+      margin-bottom: 40px;
+    }
+
+    .option-group label {
+      display: block;
+      margin-bottom: 12px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    /* ===== Grid Rules ===== */
+    .option-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .option-list.cols-1 {
+      grid-template-columns: 1fr;
+    }
+
+    .option-list.cols-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .option-list.cols-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* ===== Button ===== */
+    .option {
+      width: 100%;                 /* full width */
+      min-height: 44px;            /* click consistency */
+      padding: 12px 10px;
+
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: #fff;
+
+      font-size: 14px;
+      line-height: 1.3;
+      text-align: center;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      white-space: normal;
+      word-break: break-word;
+
+      cursor: pointer;
+    }
+
+    .option:hover {
+      border-color: #000;
+    }
+
+    .option.is-active {
+      border-color: #000;
+      background: #f2f2f2;
+      font-weight: 600;
+    }
+
+    /* ===== Mobile ===== */
+    @media (max-width: 768px) {
+      .option-list.cols-4,
+      .option-list.cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <h2>4 per row (short labels)</h2>
+  <div class="option-group">
+    <label>Shape</label>
+    <div class="option-list cols-4">
+      <button class="option">Circle</button>
+      <button class="option is-active">Square</button>
+      <button class="option">Rectangle</button>
+      <button class="option">Oval</button>
+    </div>
+  </div>
+
+  <h2>2 per row (medium labels)</h2>
+  <div class="option-group">
+    <label>Size (L × W)</label>
+    <div class="option-list cols-2">
+      <button class="option">220 × 300 mm</button>
+      <button class="option">380 × 380 mm</button>
+      <button class="option">
+        500 × 750 mm
+      </button>
+    </div>
+  </div>
+
+  <h2>1 per row (long labels)</h2>
+  <div class="option-group">
+    <label>Print Option</label>
+    <div class="option-list cols-1">
+      <button class="option">
+        Print inside and outside of the packaging
+      </button>
+      <button class="option">
+        Print inside only (outside remains blank)
+      </button>
+    </div>
+  </div>
+
+  <h2>Mixed text length (visual consistency test)</h2>
+  <div class="option-group">
+    <label>Delivery Method</label>
+    <div class="option-list cols-2">
+      <button class="option">Standard</button>
+      <button class="option">
+        Express delivery with priority production
+      </button>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

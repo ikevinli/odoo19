@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Detail Preview</title>
+  <style>
+    :root {
+      --brand: #ff3b8d;
+      --bg: #faf9f7;
+      --border: #e5e5e5;
+      --text: #1c1c1c;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    header, footer {
+      padding: 16px 24px;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      font-weight: 600;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: auto;
+      padding: 40px 24px;
+    }
+
+    /* ===== TOP ===== */
+    .pd-top {
+      display: grid;
+      grid-template-columns: 7fr 5fr;
+      gap: 40px;
+    }
+
+    .gallery {
+      background: #ddd;
+      min-height: 520px;
+    }
+
+    .breadcrumb {
+      font-size: 13px;
+      color: #777;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin: 0 0 8px;
+    }
+
+    .price {
+      color: var(--brand);
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .badges span {
+      display: inline-block;
+      padding: 6px 12px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 12px;
+      margin: 0 6px 6px 0;
+    }
+
+    .desc {
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 16px 0;
+    }
+
+    /* ===== OPTIONS ===== */
+    .option-group {
+      margin-top: 24px;
+    }
+
+    .option-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .option-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .option {
+      border: 1px solid var(--border);
+      background: #fff;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .option:hover {
+      border-color: #000;
+    }
+
+    /* ===== QUANTITY ===== */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 24px;
+      font-size: 14px;
+    }
+
+    th, td {
+      border-bottom: 1px solid var(--border);
+      padding: 10px 0;
+      text-align: left;
+    }
+
+    textarea {
+      width: 100%;
+      margin-top: 16px;
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+
+    .cta {
+      width: 100%;
+      background: var(--brand);
+      color: #fff;
+      border: none;
+      padding: 16px;
+      font-size: 16px;
+      font-weight: 600;
+      margin-top: 16px;
+      cursor: pointer;
+    }
+
+    /* ===== TABS ===== */
+    .tabs {
+      margin-top: 80px;
+      background: #fff;
+      padding: 24px;
+    }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 991px) {
+      .pd-top {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .cta {
+        position: sticky;
+        bottom: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>Header</header>
+
+<div class="container">
+
+  <div class="pd-top">
+    <div class="gallery"></div>
+
+    <div>
+      <div class="breadcrumb">Coffee & Cafe · Custom Tissue Paper</div>
+      <h1>Custom Tissue Paper</h1>
+      <div class="price">from $0.055 / Unit</div>
+
+      <div class="badges">
+        <span>Recycle</span>
+        <span>FDA-approved</span>
+        <span>Soy-based inks</span>
+      </div>
+
+      <p class="desc">
+        Transform ordinary deliveries into extraordinary experiences.
+      </p>
+
+      <div class="option-group">
+        <label>Shape</label>
+        <div class="option-list">
+          <div class="option">Circle</div>
+          <div class="option">Oval</div>
+          <div class="option">Rectangle</div>
+          <div class="option">Square</div>
+        </div>
+      </div>
+
+      <div class="option-group">
+    <label>Print Option</label>
+
+    <!-- 只改这里的 class -->
+    <div class="option-list cols-2">
+        <div class="option">Inside and Outside</div>
+        <div class="option">Inside Only</div>
+        <div class="option">Outside Only</div>
+    </div>
+</div>
+
+
+      <table>
+        <tr>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+        <tr>
+          <td>1000</td>
+          <td>$0.19 / unit</td>
+        </tr>
+      </table>
+
+      <textarea placeholder="Extra info"></textarea>
+
+      <button class="cta">Continue</button>
+    </div>
+  </div>
+
+  <div class="tabs">
+    <strong>Product Detail / Specifications (placeholder)</strong>
+  </div>
+
+</div>
+
+<footer>Footer</footer>
+
+</body>
+</html>
