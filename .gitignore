@@ -50,3 +50,11 @@ Thumbs.db
 *.tmp
 *.bak
 *.backup
+
+# Kiro MCP settings with secrets
+.kiro/settings/mcp.json
+
+# Environment variables with secrets
+.env
+.env.local
+.env.*.local
